@@ -1,8 +1,10 @@
-//import '../imports/utils.js'
+import {Meteor} from 'meteor/meteor'
+import {Players} from './../imports/api/players';
 
-import {greetUser} from './../imports/utils'
-import dftAdd from './../imports/math'
-
-console.log("Log from /server/main.js -- started");
-console.log(greetUser());
-console.log(dftAdd(2,3));
+Meteor.startup(function () {
+   Players.insert({
+     name: 'Andrew',
+     score: 3
+   });
+   console.log(Players.find().fetch());
+});
