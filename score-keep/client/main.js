@@ -4,6 +4,10 @@ import {Meteor} from 'meteor/meteor';
 import {Players} from './../imports/api/players';
 import {Tracker} from 'meteor/tracker';
 
+import TitleBar from '../imports/ui/TitleBar'
+import AddPlayer from '../imports/ui/AddPlayer'
+
+
 const renderPlayers= (playerList) => {
   return playerList.map(function (player) {
     return (
@@ -16,7 +20,7 @@ const renderPlayers= (playerList) => {
        }}>+1</button>
        <button onClick={ () => {
          Players.update({_id: player._id}, {
-           $inc: {score: -1}
+           $: {score: 1}
          });
        }}>-1</button>
        <button onClick={() => Players.remove({_id: player._id})}>X</button>
@@ -48,24 +52,20 @@ Meteor.startup(() => {
     // Update players on datastore updates
     players = Players.find().fetch();
 
-  // Moving this inside of the autorun, ensures that rendering occurs on update
-    title = "Score Kepp";
-    name = "Marcus"
     let jsx = (
       <div>
-        <h1>{title}</h1>
-        <p>Hello {name}!</p>
-        <p>This is my second p.</p>
+        <TitleBar title="Score Keep"/>
+        {/* Render AddPlayer Component */}
+        {/*
         <form onSubmit={handleSubmit}>
           <input type="text" name="playerName" placeholder="Player Name"/>
           <button>Add Player</button>
         </form>
+        */}
+        <AddPlayer/>
         {renderPlayers(players)}
       </div>
     )
     ReactDOM.render(jsx, document.getElementById('react-root'));
   })
-  // insert new doc into players collection
-  //    exactly the same as in on server
-
 });
