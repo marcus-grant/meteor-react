@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export default class TitleBar extends React.Component {
   render() {
@@ -11,7 +12,7 @@ export default class TitleBar extends React.Component {
 }
 
 TitleBar.propTypes = {
-  title: React.PropTypes.string
+  title: PropTypes.string
 };
 
 TitleBar.defaultProps = {

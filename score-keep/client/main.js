@@ -20,7 +20,7 @@ const renderPlayers= (playerList) => {
        }}>+1</button>
        <button onClick={ () => {
          Players.update({_id: player._id}, {
-           $: {score: 1}
+           $inc: {score: -1}
          });
        }}>-1</button>
        <button onClick={() => Players.remove({_id: player._id})}>X</button>
