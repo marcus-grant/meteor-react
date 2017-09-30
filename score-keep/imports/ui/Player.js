@@ -5,12 +5,10 @@ import {Players} from './../api/players';
 export default class Player extends React.Component {
   render() {
     return (
-      <div className="item" key={this.props.player._id}>
+      <div key={this.props.player._id} className="item">
         <div className="player">
           <div>
-            <h3 className="player__name">
-              {this.props.player.name}
-            </h3>
+            <h3 className="player__name">{this.props.player.name}</h3>
             <p className="player__stats">
               {this.props.player.score} point(s).
             </p>

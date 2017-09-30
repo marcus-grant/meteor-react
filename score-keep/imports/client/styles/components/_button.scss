@@ -4,17 +4,18 @@
   color: #555555;
   cursor: pointer;
   font-weight: 600;
+  line-height: 1;
   margin-left: 1.3rem;
   outline: none;
   padding: 1.3rem;
-  transition: background .2s, transform .2s ease;
+  transition: background .2s ease, transform .2s ease;
 
   &:hover, &:focus {
-    background-color: #e8e8e8;
+    background: #e8e8e8;
   }
-    
+
   &:active {
-    background: #bbbbbb;
+    background: #cccccc;
     transform: scale(1.1);
   }
 }
