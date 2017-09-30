@@ -1,30 +1,13 @@
 .item {
-  background: white;
+  background: #ffffff;
   border: 1px solid #e8e8e8;
   margin-bottom: 1.3rem;
   padding: 1.3rem;
 }
 
 .item__message {
-  font-size: 1.3em;
+  font-size: 1.3rem;
   font-style: italic;
   font-weight: 300;
   text-align: center;
 }
-
-.item__message--empty {
-  color: #999999;
-}
-
-// BEM - Block, Element, Modifier
-// Block: is a building block for the site
-//          - think TitleBar, PlayerList, Player, Add, etc.
-//          - here .item becomes a block
-// Elements: Semantic, not HTML elements that are subordinate
-//          - here, message becomes an element
-//          - by convention elements are seperated from blocks by __
-// Modifier: Modify the element it's subordinate to adding a 3rd level
-//          - delimited from Elements by -- (dashes not underscores)
-//          - doesn't need to include elements in name
-
-
